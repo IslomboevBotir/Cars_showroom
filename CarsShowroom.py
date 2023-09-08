@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import time
 
+
 class CarShop:
     print("Welcome to car sales company")
     print("____________________________")
@@ -27,6 +28,7 @@ class CarShop:
             print(f"{index + 1}) {methods}")
         return self.select(payment_methods, "Enter payment method number: ")
 
+
 class CarType(CarShop):
 
     def show_info(self):
@@ -39,6 +41,7 @@ class CarType(CarShop):
         print(f"You chose: {selected_type}")
         return selected_type
 
+
 class CarModel(CarShop):
 
     def show_info(self, models):
@@ -50,6 +53,7 @@ class CarModel(CarShop):
         selected_model = self.select(models, "Enter model number:")
         print(f"You chose: {selected_model['model']}")
         return selected_model
+    
 
 class CarColor(CarShop):
 
@@ -63,10 +67,12 @@ class CarColor(CarShop):
         print(f"You chose: {selected_color}")
         return selected_color
 
+
 class CarPrice:
 
     def show_info(self, selected_price):
         print(f"Price: ${selected_price}")
+
 
 class PaymentMethod(ABC):
 
@@ -74,15 +80,18 @@ class PaymentMethod(ABC):
     def pay(self):
         pass
 
+
 class CreditPayment(PaymentMethod):
 
     def pay(self):
         print("Payment by Credit card")
 
+
 class CashPayment(PaymentMethod):
 
     def pay(self):
         print("Payment by Cash")
+
 
 def main():
 # Информация о типах, моделях и ценах автомобилей
